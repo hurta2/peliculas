@@ -1,0 +1,249 @@
+body {
+	background: black;
+	font-family: sans-serif;
+	color: #fff;
+
+}
+
+i {
+	margin-left: -20px;
+	margin-right: 10px;
+}
+
+/***    header    ***/
+.menu {
+	width: 700px;
+	height: 25px;
+	margin-top: 20px;
+	margin-left: 640px;
+}
+
+.menu a {
+	display: inline-flex;
+	text-decoration: none;
+	color: rgb(251,153,2);
+	padding: 14px 20px;
+	margin: -5px 5px;
+	background: rgba(0,0,0);
+}
+
+.menu a:hover {
+	border-bottom: 2px solid red;
+	color: red;
+	cursor: pointer;
+}
+
+.logo img {
+	width: 120px;
+	height: 60px;
+	display: flex;
+	margin-top: -40px;
+	margin-left: 30px;
+}
+
+/***    Pelicula principal    ***/
+.pelicula-principal {
+	width: 100%;
+	height: 400px;
+	margin-top: -15px;
+	background: url(./img/dune6.jpg) no-repeat center center/cover;
+}
+
+.pelicula-principal h2 {
+	font-size: 30px;
+	color: #fff;
+	margin-left: 60px;
+	padding-top: 180px;
+	cursor: pointer;
+}
+
+.pelicula-principal p {
+	color: #fff;
+	padding-left: 6px;
+	padding-top: 6px;
+	width: 40%;
+	height: 100px;
+	margin-left: 60px;
+	margin-top: -20px;
+	cursor: pointer;
+	background: rgba(0,0,0, 0.2);
+}
+
+.pelicula-principal button {
+	color: #fff;
+	background: rgba(0,0,0, 0.8);
+	width: 160px;
+	height: 40px;
+	margin-left: 60px;
+	margin-top: 5px;
+	border: none;
+}
+
+.pelicula-principal button:hover {
+	color: rgb(251,153,2);
+	cursor: pointer;
+	background: black;
+}
+
+/*----------Controles e indicadores--------------*/
+.controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	color: #fff;
+	margin-top: 20px;
+}
+
+.controles h2 {
+	color: #fff;
+	font-size: 20px;
+	margin-bottom: -5px;
+	
+}
+
+.controles .indicadores button {
+	background: #fff;
+	width: 10px;
+	height: 3px;
+	cursor: pointer;
+	border: none;
+	margin-right: 2px;
+}
+
+.controles .indicadores button:hover,
+.controles .indicadores button.activo {
+	background: red;
+}
+
+/***    contenedor dos    ***/
+.peliculas-recomendadas{
+	width: 90%;
+	margin-left: 5%;
+}
+
+.peliculas-recomendadas .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin-bottom: 100px;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(70% - 40%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda i,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha i {
+	margin: 0 25%;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+	background: rgba(0,0,0, 0.9);
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+	right: 0;
+}
+
+/*----------Carrusel--------------*/
+.peliculas-recomendadas .contenedor-carrusel {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.peliculas-recomendadas .contenedor-carrusel .carrusel {
+	display: flex;
+	flex-wrap: nowrap;
+	height: 160px;
+	width: 100%;
+}
+
+.peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula  {
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+.peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula.hover {
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula img {
+	width: 100%;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 800px) {
+	header .logo {
+		margin-left: -20px;
+		margin-bottom: -20px;
+	}
+
+	.contenedor-uno {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.pelicula-principal {
+		font-size: 14px;
+	}
+
+	.pelicula-principal h2,
+	.pelicula-principal p {
+		max-width: 100%;
+	}
+
+	.pelicula-principal h2 {
+		padding-top: 120px;
+	}
+
+	.pelicula-principal p {
+		height: 140px;
+	}
+
+	.pelicula-principal button {
+		margin-top: 10px;
+	}
+
+	.peliculas-recomendadas .contenedor-carrusel {
+		overflow: visible;
+	}
+
+	.peliculas-recomendadas .contenedor-carrusel .carrusel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 20px;
+	}
+
+	.peliculas-recomendadas .indicadores,
+	.peliculas-recomendadas .flecha-izquierda,
+	.peliculas-recomendadas .flecha-derecha {
+		display: none;
+	}
+}
+
+
+
+
+
+
